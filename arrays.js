@@ -57,7 +57,7 @@ console.log(flatted);
  console.log(flatted);
 flatted = flatted.flat();
 flatted.sort()
-flatted.forEach()
+//flatted.forEach()
 console.log(flatted);
 flatted.sort(function(a,b){return a-b})
 console.log(flatted);
@@ -69,3 +69,21 @@ console.log(flatted);
 // var sl = flatted.slice(2,4)
 // console.log(sl);
 // console.log(flatted);
+
+const sqrtNumber = [49, 4, 9, 16, 25];
+//sqrtNumber.forEach(sqrtFunction);
+//yangi massiv yaratmaydi
+//ichiga kiradiga parametrlar 3ta hammasini ishlatish shart emas
+function sqrtFunction(value, index, array) {
+  array[index] = Math.sqrt(value)
+}
+console.log(sqrtNumber);
+sqrtNumber.forEach((value,index, array) => 
+{
+    array[index] = Math.sqrt(value)
+})
+sqrtNumber.forEach(showFunction)
+function showFunction(value, index)
+{
+    console.log(`${index+1}: ${value}`);
+}
