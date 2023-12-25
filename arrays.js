@@ -131,35 +131,6 @@ function sortingAlgorithm(arr, start=0, end=arr.length, asc=true)
 // sorted = sortingAlgorithm(flatted, 3, 9)
 // console.log(sorted);
 
-Array.prototype.customSort = function(start=0, end=this.length, asc=true)
-{
-  let n = this.length;
-        
-  for(let i = start; i < end; i++) {
-      let index = i;
-      for(let j = i+1; j < end; j++){
-        if(asc)
-        {
-          if(this[j] < this[index]) {
-            index=j; 
-          }
-        }
-        else{
-          if(this[j] > this[index]) {
-            index=j; 
-          }
-        } 
-      }
-      if (index != i) {
-          let tmp = this[i]; 
-          this[i] = this[index];
-          this[index] = tmp;      
-      }
-  }
-  return this;
-}
-flatted.customSort(3, 8)
-console.log(flatted);
 
 
 const numbers1 = [45, 4, 9, 16, 25];
