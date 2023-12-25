@@ -59,8 +59,8 @@ flatted = flatted.flat();
 flatted.sort()
 //flatted.forEach()
 console.log(flatted);
-flatted.sort(function(a,b){return a-b})
-console.log(flatted);
+//flatted.sort(function(a,b){return a-b})
+//console.log(flatted);
 //kesib beradi
 // var sp = flatted.splice(1,3, "Qo", "Yana")
 // console.log(sp);
@@ -77,13 +77,52 @@ const sqrtNumber = [49, 4, 9, 16, 25];
 function sqrtFunction(value, index, array) {
   array[index] = Math.sqrt(value)
 }
-console.log(sqrtNumber);
-sqrtNumber.forEach((value,index, array) => 
-{
-    array[index] = Math.sqrt(value)
-})
-sqrtNumber.forEach(showFunction)
+//console.log(sqrtNumber);
+// sqrtNumber.forEach((value,index, array) => 
+// {
+//     array[index] = Math.sqrt(value)
+// })
+//sqrtNumber.forEach(showFunction)
 function showFunction(value, index)
 {
     console.log(`${index+1}: ${value}`);
 }
+
+function sortingAlgorithm(arr, start=0, end=arr.length, asc=true)
+{
+  const slarr = arr.slice(start, end)
+  let resarr = []
+  if(asc)
+  {
+    if(!isNaN(parseFloat(arr[0])))
+    {
+      slarr.sort((a,b)=> a-b)
+    }
+    else{
+      slarr.sort()
+    }
+  }
+  else
+  {
+    if(!isNaN(parseFloat(arr[0])))
+    {
+      slarr.sort((a,b)=> b-a)
+    }
+    else{
+      slarr.sort()
+      slarr.reverse()
+    }
+  }
+  if (start !== 0) {
+    resarr = arr.slice(0, start).concat(slarr);
+  } else {
+    resarr = slarr;
+  }
+  if (end !== arr.length) {
+    resarr = resarr.concat(arr.slice(end));
+  }
+  return resarr
+  
+}
+sorted = sortingAlgorithm(flatted, 3, 9)
+console.log(sorted);
