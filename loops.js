@@ -5,7 +5,7 @@ var i=0
 //     arr.push(i)
 //     i++;
 // }
-for(var i=8; i>0; i++)
+for(var i=8; i<22; i++)
 {
     arr.push(i)
 }
@@ -75,3 +75,29 @@ function lookUpProfile(name, prop) {
 }
 
 lookUpProfile("Akira", "likes");
+
+// i=1;
+// for(;i<contacts.length;i++)
+// {
+//   console.log(contacts[i]);
+// }
+let person = contacts[0]
+for(let x in person)
+{
+  console.log(`${x} : ${person[x]}`);
+}
+
+//indeks lar bo'yich y
+// for(let x in contacts)
+// {
+//   console.log(x);
+// }
+for(let x of contacts)
+{
+  console.log(x);
+}
+let txt = 'hello'
+for (let x of txt)
+{
+  console.log(x);
+}
