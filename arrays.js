@@ -131,6 +131,36 @@ function sortingAlgorithm(arr, start=0, end=arr.length, asc=true)
 // sorted = sortingAlgorithm(flatted, 3, 9)
 // console.log(sorted);
 
+Array.prototype.customSort = function(start=0, end=this.length, asc=true)
+{
+  let n = this.length;
+        
+  for(let i = start; i < end; i++) {
+      let index = i;
+      for(let j = i+1; j < end; j++){
+        if(asc)
+        {
+          if(this[j] < this[index]) {
+            index=j; 
+          }
+        }
+        else{
+          if(this[j] > this[index]) {
+            index=j; 
+          }
+        } 
+      }
+      if (index != i) {
+          let tmp = this[i]; 
+          this[i] = this[index];
+          this[index] = tmp;      
+      }
+  }
+  return this;
+}
+flatted.customSort(3, 8)
+console.log(flatted);
+
 
 const numbers1 = [45, 4, 9, 16, 25];
 //map qilganda yangi massiv yaratadi
@@ -151,11 +181,11 @@ function myFunction(value,index, array) {
 //   return Array.prototype.forEach(console.log)
 // }
 
-// const friends = [
-//   {name: 'Dave', kids: ['Max', 'Jack']},
-//   {name: 'Max', kids: ['Sam', 'Alex', 'Megan']},
-//   {name: 'Jordan', kids: ['Mason', 'Cameron', 'Kaylin']}
-// ];
+const friends = [
+  {name: 'Dave', kids: ['Max', 'Jack']},
+  {name: 'Max', kids: ['Sam', 'Alex', 'Megan']},
+  {name: 'Jordan', kids: ['Mason', 'Cameron', 'Kaylin']}
+];
 // const names = friends.map(k=>k.name)
 // const kids = friends.flatMap(k=>k.kids)
 // console.log(names);
@@ -164,3 +194,34 @@ function myFunction(value,index, array) {
 // console.log(allnames);
 // let Maxnames = allnames.filter(n=> n==='Max')
 // console.log(Maxnames);
+
+let nums = [1,2,3,4,5,6,7,8,9];
+let prevval = -10
+let sum = nums.reduce((total, value)=> total+value, -100)
+console.log(sum);
+
+// let min = nums.reduce((a,b) => Math.min(a,b), Infinity)
+// console.log(min);
+//console.log(nums.some(x=>x>4));
+
+//console.log(nums.every(x=>x>1));
+
+let findJordan = friends.find(x=> x.name==="Jordan")
+let jordanIndex = friends.findIndex(x=> x.name==="Jordan")
+//console.log(findJordan);
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const f = fruits.entries();
+
+for (let x of f) {
+  console.log(x)
+}
+console.log(fruits.includes("Banana"));
+
+const q1 = ["Jan", "Feb", "Mar"];
+const q2 = ["Apr", "May", "Jun"];
+const q3 = ["Jul", "Aug", "Sep"];
+const q4 = ["Oct", "Nov", "May"];
+
+const year = [...q1, ...q2, ...q3, ...q4];
+console.log(year.length);
