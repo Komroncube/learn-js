@@ -47,14 +47,16 @@ var arr2 = res.concat(firstArray, cars)
 //console.log(arr2.length);
 //console.log(JSON.stringify(arr2));
 var multiarr = numArr;
-multiarr.push([11,111,1111], [45, [32,23]])
+multiarr.push([11,111,1111], [45, [32,23, [43, 78, [90,99, 89]]]])
 console.log(multiarr);
+console.log();
+console.log(numArr);
 //1ta darajaga tushiradi
-var flatted = numArr.flat();
+var flatted = numArr.flat(5);
 console.log(flatted);
 
 // delete flatted[5];
- console.log(flatted);
+// console.log(flatted);
 flatted = flatted.flat();
 flatted.sort()
 //flatted.forEach()
@@ -78,6 +80,8 @@ function sqrtFunction(value, index, array) {
   array[index] = Math.sqrt(value)
 }
 //console.log(sqrtNumber);
+
+//har bir element uchun chaqiriladi
 // sqrtNumber.forEach((value,index, array) => 
 // {
 //     array[index] = Math.sqrt(value)
@@ -124,5 +128,39 @@ function sortingAlgorithm(arr, start=0, end=arr.length, asc=true)
   return resarr
   
 }
-sorted = sortingAlgorithm(flatted, 3, 9)
-console.log(sorted);
+// sorted = sortingAlgorithm(flatted, 3, 9)
+// console.log(sorted);
+
+
+const numbers1 = [45, 4, 9, 16, 25];
+//map qilganda yangi massiv yaratadi
+// The map() method creates a new array by performing a function on each array element.
+
+// The map() method does not execute the function for array elements without values.
+
+// The map() method does not change the original array.
+const numbers2 = numbers1.map(myFunction);
+const numbers3 = numbers1.map((x)=> x*3-1);
+
+function myFunction(value,index, array) {
+  return value * 2-1;
+}
+// console.log(numbers2);
+// numbers2.showElements()
+// Array.prototype.showElements = function() {
+//   return Array.prototype.forEach(console.log)
+// }
+
+// const friends = [
+//   {name: 'Dave', kids: ['Max', 'Jack']},
+//   {name: 'Max', kids: ['Sam', 'Alex', 'Megan']},
+//   {name: 'Jordan', kids: ['Mason', 'Cameron', 'Kaylin']}
+// ];
+// const names = friends.map(k=>k.name)
+// const kids = friends.flatMap(k=>k.kids)
+// console.log(names);
+// console.log(kids.join(' | '))
+// let allnames = names.concat(kids, [2,4,5,6])
+// console.log(allnames);
+// let Maxnames = allnames.filter(n=> n==='Max')
+// console.log(Maxnames);
