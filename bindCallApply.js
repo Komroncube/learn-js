@@ -11,7 +11,7 @@ const member = {
     firstName:"Hege",
     lastName: "Nilsen",
 }
-  
+
 let fullBind = person.fullName.bind(member);
 let fullCall = person.fullName.call(member)
 console.log(fullBind());
@@ -21,4 +21,6 @@ function sayHello()
 {
     console.log(`Hello! I'm ${this.firstName} ${this.lastName}`);
 }
+
+//argumentlar list sifatida qabul qiladi
 sayHello.apply(person)
