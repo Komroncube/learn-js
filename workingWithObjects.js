@@ -1,3 +1,4 @@
+"use strict";
 var dog ={
     name: "Bob",
     speed: 39.5,
@@ -58,3 +59,12 @@ var amazaonStorage = [
 var folder = ourStorage.cabinet["top drawer"]
 //console.log(folder);
 console.log(amazaonStorage[0].cabinet);
+console.log();
+// "use strict";
+function myFunction() {
+  //alert(this); // will alert "undefined"
+  return this
+  //console.log(this);
+}
+
+console.log(myFunction());
