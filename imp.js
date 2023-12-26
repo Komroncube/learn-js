@@ -1,5 +1,7 @@
-import * as stringManipulation from "./exp.mjs";
-// const stringManipulation = require("./exp.mjs")
+//import * as stringManipulation from "./exp.js";
+const stringManipulation = require("./exp.js")
+
+
 const cap = stringManipulation.capitalize("hola")
 // import { myFunction } from "./exp.mjs";
 // const cap = capitalize("hola")
