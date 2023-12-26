@@ -11,13 +11,20 @@
 <p id="demo">A Paragraph.</p>
 <p id="fcheck"></p>
 <button type="button" onclick="myFunction()">Try it</button>
+<button onclick="this.style.display='none'">
+    Click to Remove Me!
+  </button>
+<p id="global"></p>
+<script>
+document.getElementById("global").innerHTML = myFunction();
 
-    
-<script src="first.js"></script>
+</script>
+<!-- <script src="first.js"></script>
 <script src="second.js"></script>
 <script src="main.js"></script>
 <script src="simpleDataOperations.js"></script>
 <script src="imp.js"></script>
-<script src="exp.mjs"></script>
+<script src="exp.mjs"></script> -->
+<script src="workingWithObjects.js"></script>
 </body>
 </html>
