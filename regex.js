@@ -27,4 +27,8 @@ var numbers = megastring.replace(/\D+/g, "")
 //     result+=x
 // }
 var y = BigInt(numbers)
-console.log(y)
+//console.log(y)
+const pattern = /e/;
+console.log(pattern.test("The best things in life are free!"));
+console.log(/b/.test("The best things in life are free!"));
+console.log((/i+/g).exec("The best things in life are free!"));
