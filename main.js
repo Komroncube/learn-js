@@ -29,3 +29,6 @@ console.log(age)
 
 // harlar = 38;
 // console.log(harlar)
+
+import * as exp from './modules/exp.js'
+console.log(exp.gunafsha);
