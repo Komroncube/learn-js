@@ -1,2 +1,2 @@
 export const name = "Jesse";
-export const age = 40;  
+export const age = 40;
